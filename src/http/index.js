@@ -25,8 +25,11 @@ module.exports = (dfs, opts) => {
         res.header("Access-Control-Allow-Methods", "*");
         res.header("Access-Control-Allow-Headers", "*");
         res.header("Access-Control-Allow-Credentials", "true");
-        if (req.method === 'OPTIONS') res.code(204).send();
-        done();
+        if (req.method === 'OPTIONS') {
+            res.code(204).send();
+        } else {
+            done();
+        }
     })
 
     // Load Auth and then register the routes
