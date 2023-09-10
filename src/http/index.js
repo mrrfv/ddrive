@@ -24,6 +24,7 @@ module.exports = (dfs, opts) => {
         res.header("Access-Control-Allow-Origin", "*");
         res.header("Access-Control-Allow-Methods", "*");
         res.header("Access-Control-Allow-Headers", "*");
+        res.header("Access-Control-Expose-Headers", "Content-Range");
         res.header("Access-Control-Allow-Credentials", "true");
         if (req.method === 'OPTIONS') {
             res.code(204).send();

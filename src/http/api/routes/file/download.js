@@ -52,6 +52,7 @@ module.exports.handler = async (req, reply) => {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': '*',
         'Access-Control-Allow-Headers': '*',
+        'Access-Control-Expose-Headers': 'Content-Range',
         'Access-Control-Allow-Credentials': 'true',
         'Content-Disposition': `attachment; filename=${encodeURI(file.name)}`,
     }
