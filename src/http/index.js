@@ -3,7 +3,6 @@ const Fastify = require('fastify')
 const FastifyStatic = require('@fastify/static')
 const FastifyMultipart = require('@fastify/multipart')
 const FastifyAuth = require('@fastify/auth')
-const FastifyCORS = require('@fastify/cors')
 
 const commonSchemas = require('./api/constants/commonSchemas')
 const directoryRoutes = require('./api/routes/directory/routes')
@@ -21,11 +20,12 @@ module.exports = (dfs, opts) => {
     fastify.register(FastifyMultipart, { limits: { fileSize: Infinity } })
 
     // Enable CORS
-    fastify.register(FastifyCORS, {
-        origin: '*',
-        methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
-        credentials: true,
-        hook: 'preHandler',
+    fastify.addHook('preHandler', (req, res, done) => {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Methods", "*");
+        res.header("Access-Control-Allow-Headers", "*");
+        res.header("Access-Control-Allow-Credentials", "true");
+        done();
     })
 
     // Load Auth and then register the routes

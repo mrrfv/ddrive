@@ -38,7 +38,6 @@
   "dependencies": {
     "@discordjs/rest": "^1.0.0",
     "@fastify/auth": "^4.2.0",
-    "@fastify/cors": "^8.3.0",
     "@fastify/multipart": "^7.3.0",
     "@fastify/static": "^6.6.0",
     "dotenv": "^16.0.3",
