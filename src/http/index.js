@@ -23,7 +23,8 @@ module.exports = (dfs, opts) => {
     // Enable CORS
     fastify.register(FastifyCORS, {
         origin: '*',
-        methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE']
+        methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
+        credentials: true,
     })
 
     // Load Auth and then register the routes
