@@ -25,7 +25,7 @@ module.exports = (dfs, opts) => {
         origin: '*',
         methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
         credentials: true,
-        hook: 'onSend',
+        hook: 'preHandler',
     })
 
     // Load Auth and then register the routes
