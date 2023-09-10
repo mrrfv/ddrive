@@ -3,6 +3,7 @@ const Fastify = require('fastify')
 const FastifyStatic = require('@fastify/static')
 const FastifyMultipart = require('@fastify/multipart')
 const FastifyAuth = require('@fastify/auth')
+const FastifyCORS = require('@fastify/cors')
 
 const commonSchemas = require('./api/constants/commonSchemas')
 const directoryRoutes = require('./api/routes/directory/routes')
@@ -18,6 +19,12 @@ module.exports = (dfs, opts) => {
 
     // Enable Multipart upload
     fastify.register(FastifyMultipart, { limits: { fileSize: Infinity } })
+
+    // Enable CORS
+    fastify.register(FastifyCORS, {
+        origin: '*',
+        methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE']
+    })
 
     // Load Auth and then register the routes
     fastify.decorate('basicAuth', Auth(opts.authOpts))

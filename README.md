@@ -31,6 +31,9 @@ https://user-images.githubusercontent.com/59018146/167635903-48cdace0-c383-4e7d-
 
 ### Live demo at [ddrive.forscht.dev](https://ddrive.forscht.dev/)
 
+### Changes from the original repo
+- CORS support (origin set to *)
+
 ### Features
 - Theoretically unlimited file size, thanks to splitting the file in 24mb chunks using nodejs streams API.
 - Simple yet robust HTTP front end 
