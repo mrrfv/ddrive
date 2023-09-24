@@ -11,7 +11,7 @@ const Auth = require('./api/services/auth')
 
 module.exports = (dfs, opts) => {
     // Create fastify instance
-    const fastify = Fastify({ logger: { base: undefined } })
+    const fastify = Fastify({ logger: process.env.DISABLE_FASTIFY_LOGGER ? false : { base: undefined } })
 
     // Load common schemas
     commonSchemas.forEach((schema) => fastify.addSchema(schema))

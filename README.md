@@ -1,6 +1,7 @@
 # Changes from the original repo
 - CORS support (origin set to *)
 - Querystring parameter authorization supported in addition to Basic Auth (authusername, authpassword)
+- `DISABLE_FASTIFY_LOGGER` environment variable to disable request/response logging
 
 ---
 
