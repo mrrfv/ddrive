@@ -1,3 +1,9 @@
+# Changes from the original repo
+- CORS support (origin set to *)
+- Querystring parameter authorization supported in addition to Basic Auth (authusername, authpassword)
+
+---
+
 <h1 align="center" style="font-size: 60px"> DDRIVE </h1>
 
 <p align="center"><strong> Turn Discord into a datastore that can manage and store your files. </strong></p>
@@ -30,9 +36,6 @@ https://user-images.githubusercontent.com/59018146/167635903-48cdace0-c383-4e7d-
 #### Current stable branch `4.x`
 
 ### Live demo at [ddrive.forscht.dev](https://ddrive.forscht.dev/)
-
-### Changes from the original repo
-- CORS support (origin set to *)
 
 ### Features
 - Theoretically unlimited file size, thanks to splitting the file in 24mb chunks using nodejs streams API.
